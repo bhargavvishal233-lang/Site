@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { NavItem } from "@/types/navigation";
+import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
 
 const navigationItems: NavItem[] = [
   {
@@ -102,6 +103,15 @@ export const Navbar: React.FC = () => {
 
         {/* Header Actions */}
         <div className="hidden lg:flex items-center gap-4">
+          <Show when="signed-out">
+            <SignInButton mode="modal" />
+            <SignUpButton mode="modal">
+              <Button variant="outline" size="md">Sign Up</Button>
+            </SignUpButton>
+          </Show>
+          <Show when="signed-in">
+            <UserButton />
+          </Show>
           <Button variant="primary" size="md">
             Get in Touch
           </Button>
@@ -146,6 +156,13 @@ export const Navbar: React.FC = () => {
                 )}
               </div>
             ))}
+            <Show when="signed-out">
+              <SignInButton />
+              <SignUpButton />
+            </Show>
+            <Show when="signed-in">
+              <UserButton />
+            </Show>
             <Button variant="primary" size="lg" className="w-full mt-2">
               Get in Touch
             </Button>
