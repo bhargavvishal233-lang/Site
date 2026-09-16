@@ -1,69 +1,54 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/Button";
+import { Badge } from "@/components/ui/Badge";
+import { ArrowRight } from "lucide-react";
+import { Services } from "@/components/sections/Services";
+import { Showcase } from "@/components/sections/Showcase";
+import { Pricing } from "@/components/sections/Pricing";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <>
+      {/* Hero Section (From Phase 1) */}
+      <section className="relative pt-12 pb-24 overflow-hidden bg-canvas">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <div className="flex justify-center mb-6">
+            <Badge>Performance Marketing & Digital Systems</Badge>
+          </div>
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-charcoal max-w-5xl mx-auto leading-[1.1]">
+            Engineering Digital Growth That Drives{" "}
+            <span className="bracket-accent text-crimson">Real Business Impact</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 text-lg sm:text-xl text-charcoal-muted max-w-2xl mx-auto font-normal">
+            We combine data-driven performance marketing with custom UI/UX design and scalable software engineering.
           </p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button className="w-full sm:w-auto gap-2" size="lg" variant="primary">
+              Start a Project <ArrowRight className="w-4 h-4"/>
+            </Button>
+            <Button className="w-full sm:w-auto" size="lg" variant="outline">
+              Explore Templates & Demos
+            </Button>
+          </div>
+          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto bg-white p-6 rounded-3xl shadow-card border border-black/5">
+            {[
+              { value: "150+", label: "Projects Completed" },
+              { value: "98%", label: "Client Satisfaction" },
+              { value: "5+ Years", label: "Industry Experience" },
+              { value: "24/7", label: "Dedicated Support" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="text-2xl sm:text-3xl font-extrabold text-charcoal">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-charcoal-muted mt-1 font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* New Phase 2 Sections */}
+      <Services/>
+      <Showcase/>
+      <Pricing/>
+    </>
   );
 }
