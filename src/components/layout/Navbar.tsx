@@ -27,9 +27,7 @@ const navigationItems: NavItem[] = [
     ],
   },
   { title: "Templates", href: "/templates" },
-  { title: "Portfolio", href: "#portfolio" },
   { title: "About", href: "#about" },
-  { title: "Client Login", href: "/login" },
 ];
 
 export const Navbar: React.FC = () => {
@@ -61,7 +59,7 @@ export const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-10">
           {navigationItems.map((item) => (
             <div
               key={item.title}
@@ -79,22 +77,24 @@ export const Navbar: React.FC = () => {
 
               {/* Dropdown Menu */}
               {item.children && activeDropdown === item.title && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-card border border-black/5 p-3 animate-in fade-in slide-in-from-top-2 duration-150">
-                  {item.children.map((subItem) => (
-                    <Link
-                      key={subItem.title}
-                      href={subItem.href}
-                      className="block p-3 rounded-xl hover:bg-canvas transition-colors group"
-                    >
-                      <div className="text-sm font-semibold text-charcoal group-hover:text-crimson flex items-center justify-between">
-                        {subItem.title}
-                        <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      {subItem.description && (
-                        <p className="text-xs text-charcoal-muted mt-0.5">{subItem.description}</p>
-                      )}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-72 z-50">
+                  <div className="bg-white rounded-2xl shadow-card border border-black/5 p-3 animate-in fade-in slide-in-from-top-2 duration-150">
+                    {item.children.map((subItem) => (
+                      <Link
+                        key={subItem.title}
+                        href={subItem.href}
+                        className="block p-3 rounded-xl hover:bg-canvas transition-colors group"
+                      >
+                        <div className="text-sm font-semibold text-charcoal group-hover:text-crimson flex items-center justify-between">
+                          {subItem.title}
+                          <ArrowUpRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                        {subItem.description && (
+                          <p className="text-xs text-charcoal-muted mt-0.5">{subItem.description}</p>
+                        )}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
@@ -105,9 +105,6 @@ export const Navbar: React.FC = () => {
         <div className="hidden lg:flex items-center gap-4">
           <Show when="signed-out">
             <SignInButton mode="modal" />
-            <SignUpButton mode="modal">
-              <Button variant="outline" size="md">Sign Up</Button>
-            </SignUpButton>
           </Show>
           <Show when="signed-in">
             <UserButton />
@@ -158,7 +155,6 @@ export const Navbar: React.FC = () => {
             ))}
             <Show when="signed-out">
               <SignInButton />
-              <SignUpButton />
             </Show>
             <Show when="signed-in">
               <UserButton />
