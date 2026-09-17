@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Calendar, Clock, Video, CheckCircle2, AlertCircle } from "lucide-react";
 
-import { MeetingType } from "@prisma/client";
+type MeetingType = "DISCOVERY" | "STRATEGY" | "HANDOFF";
 
 const meetingTypes: { id: MeetingType; title: string; duration: string; desc: string }[] = [
   { id: "DISCOVERY", title: "15-Min Discovery Call", duration: "15 mins", desc: "Quick intro to evaluate your agency project scope and timeline." },
