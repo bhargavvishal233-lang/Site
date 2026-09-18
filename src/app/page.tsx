@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <>
       <EditorialHero />
-      <AboutSection />
       <Curved3DGallerySection />
       <WhyChooseUsTimeline />
       <Pricing />
       <ParallaxGallery />
 
       <ReservationBookingSection />
+      <AboutSection />
       <FAQ />
       <Footer />
     </>

@@ -1,24 +1,47 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef } from "react";
+import { motion, useScroll, useVelocity, useSpring, useMotionValue, useAnimationFrame, useMotionTemplate } from "framer-motion";
 
 const brands = ["NIKE", "CHANEL", "GOOGLE", "FRAMER", "NETFLIX", "APPLE", "VOGUE"];
 
 export const AboutSection: React.FC = () => {
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, {
+    damping: 50,
+    stiffness: 400
+  });
+
+  const baseRotation = useRef(0);
+  const rotateY = useMotionValue(0);
+
+  useAnimationFrame((t, delta) => {
+    // Base continuous rotation speed
+    let moveBy = 0.015 * delta;
+    
+    // Add scroll velocity impact (adjust multiplier for sensitivity)
+    moveBy += smoothVelocity.get() * 0.01;
+    
+    baseRotation.current -= moveBy;
+    rotateY.set(baseRotation.current);
+  });
+
+  const transform = useMotionTemplate`rotateX(-15deg) rotateZ(-5deg) rotateY(${rotateY}deg)`;
+
   return (
-    <section id="about" className="relative bg-[#111] text-white pt-24 pb-40 overflow-hidden rounded-t-[3rem] -mt-12 z-20">
+    <section id="about" className="relative bg-[#111] text-white pt-28 pb-32 overflow-hidden rounded-t-[3rem] -mt-12 z-20">
       
       {/* Editorial 3-Column Header */}
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 relative z-10">
         
         {/* Column 1: Bio */}
         <div className="md:col-span-6 lg:col-span-5">
-          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-8">
-            About Me
+          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
+            About Us
           </h2>
-          <p className="text-xl md:text-2xl leading-[1.6] font-light text-white/90">
-            I&apos;m a creative art director who turns bold ideas into thoughtful, engaging digital experiences. I combine bold visuals, intuitive layouts, and strategic thinking to create websites that feel unique, work seamlessly, and help brands stand out.
+          <p className="text-xl md:text-2xl leading-[1.5] font-light text-white/90">
+            We are a creative team that turns bold ideas into thoughtful, engaging digital experiences. We combine bold visuals, intuitive layouts, and strategic thinking to create websites that feel unique, work seamlessly, and help brands stand out.
           </p>
         </div>
 
@@ -27,10 +50,10 @@ export const AboutSection: React.FC = () => {
 
         {/* Column 2: Services */}
         <div className="md:col-span-3 lg:col-span-2">
-          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-8">
+          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
             Services
           </h2>
-          <ul className="space-y-3 text-lg font-light text-white/80">
+          <ul className="space-y-2 text-lg font-light text-white/80">
             <li>Branding</li>
             <li>UX/UI Design</li>
             <li>Development</li>
@@ -41,10 +64,10 @@ export const AboutSection: React.FC = () => {
 
         {/* Column 3: Industries */}
         <div className="md:col-span-3 lg:col-span-2">
-          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-8">
+          <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
             Industries
           </h2>
-          <ul className="space-y-3 text-lg font-light text-white/80">
+          <ul className="space-y-2 text-lg font-light text-white/80">
             <li>Design</li>
             <li>Technology</li>
             <li>Fashion</li>
@@ -55,7 +78,7 @@ export const AboutSection: React.FC = () => {
       </div>
 
       {/* 3D Rotating Text Carousel */}
-      <div className="mt-40 h-[60vh] min-h-[500px] w-full flex items-center justify-center relative select-none pointer-events-none">
+      <div className="mt-28 h-[40vh] min-h-[400px] w-full flex items-center justify-center relative select-none pointer-events-none">
         
         {/* CSS for the 3D Animation */}
         <style dangerouslySetInnerHTML={{__html: `
@@ -68,13 +91,6 @@ export const AboutSection: React.FC = () => {
             width: 0;
             height: 0;
             transform-style: preserve-3d;
-            animation: rotateRing 30s linear infinite;
-            /* Tilt the ring for the dramatic editorial angle */
-            transform: rotateX(-15deg) rotateZ(-5deg);
-          }
-          @keyframes rotateRing {
-            from { transform: rotateX(-15deg) rotateZ(-5deg) rotateY(0deg); }
-            to { transform: rotateX(-15deg) rotateZ(-5deg) rotateY(-360deg); }
           }
           .carousel-item {
             position: absolute;
@@ -84,35 +100,32 @@ export const AboutSection: React.FC = () => {
             /* The base styling for the text */
             color: white;
             font-weight: 800;
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(2rem, 5vw, 4rem); /* Reduced text size */
             letter-spacing: -0.02em;
             white-space: nowrap;
-            /* Hide the back of the cylinder slightly or completely if desired. 
-               The reference image shows the back face but mirrored and slightly dimmer. */
+            /* Hide the back of the cylinder slightly or completely if desired. */
             backface-visibility: visible;
           }
         `}} />
 
         <div className="perspective-container flex items-center justify-center w-full h-full">
-          <div className="carousel-ring">
+          <motion.div className="carousel-ring" style={{ transform }}>
             {brands.map((brand, i) => {
               const rotationY = (360 / brands.length) * i;
-              // Adjust translateZ based on viewport size for responsive radius
+              // Adjust translateZ based on viewport size for responsive radius so text doesn't overlap
               return (
                 <div 
                   key={i} 
                   className="carousel-item -translate-x-1/2 -translate-y-1/2"
                   style={{
-                    transform: `translate(-50%, -50%) rotateY(${rotationY}deg) translateZ(350px)`,
-                    // Dim the items as they go to the back if we wanted, 
-                    // but pure 3D handles perspective naturally.
+                    transform: `translate(-50%, -50%) rotateY(${rotationY}deg) translateZ(calc(180px + 10vw))`, /* Reduced ring size */
                   }}
                 >
                   {brand}
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
 
