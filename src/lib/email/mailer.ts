@@ -1,3 +1,4 @@
+import nodemailer from "nodemailer";
 import {
   getClientSignUpEmailHtml,
   getClientSignInEmailHtml,
@@ -85,41 +86,37 @@ export async function sendEmail({
 
   if (smtpHost || (gmailUser && gmailPass)) {
     try {
-      // @ts-ignore
-      const nodemailer = await import("nodemailer").catch(() => null);
-      if (nodemailer) {
-        const transporter = nodemailer.createTransport(
-          gmailUser && gmailPass
-            ? {
-                service: "gmail",
-                auth: {
-                  user: gmailUser,
-                  pass: gmailPass,
-                },
-              }
-            : {
-                host: smtpHost,
-                port: Number(process.env.SMTP_PORT) || 587,
-                secure: process.env.SMTP_SECURE === "true",
-                auth: {
-                  user: process.env.SMTP_USER,
-                  pass: process.env.SMTP_PASS,
-                },
-              }
-        );
+      const transporter = nodemailer.createTransport(
+        gmailUser && gmailPass
+          ? {
+              service: "gmail",
+              auth: {
+                user: gmailUser,
+                pass: gmailPass,
+              },
+            }
+          : {
+              host: smtpHost,
+              port: Number(process.env.SMTP_PORT) || 587,
+              secure: process.env.SMTP_SECURE === "true",
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+              },
+            }
+      );
 
-        const info = await transporter.sendMail({
-          from,
-          to: recipients.join(", "),
-          replyTo: replyTo || from,
-          subject,
-          html,
-          text: text || subject,
-        });
+      const info = await transporter.sendMail({
+        from,
+        to: recipients.join(", "),
+        replyTo: replyTo || from,
+        subject,
+        html,
+        text: text || subject,
+      });
 
-        console.log(`[Mailer] Successfully sent SMTP email to ${recipients.join(", ")} (ID: ${info.messageId})`);
-        return { success: true, messageId: info.messageId };
-      }
+      console.log(`[Mailer] Successfully sent SMTP email to ${recipients.join(", ")} (ID: ${info.messageId})`);
+      return { success: true, messageId: info.messageId };
     } catch (err: any) {
       console.error("[Mailer] SMTP dispatch exception:", err);
       return { success: false, error: err?.message || String(err) };
