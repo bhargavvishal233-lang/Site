@@ -1,4 +1,5 @@
 import { EditorialHero } from "@/components/sections/EditorialHero";
+import { AboutSection } from "@/components/sections/AboutSection";
 import { Curved3DGallerySection } from "@/components/sections/Curved3DGallerySection";
 import { WhyChooseUsTimeline } from "@/components/sections/WhyChooseUsTimeline";
 import { Pricing } from "@/components/sections/Pricing";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <>
       <EditorialHero />
+      <AboutSection />
       <Curved3DGallerySection />
       <WhyChooseUsTimeline />
       <Pricing />
