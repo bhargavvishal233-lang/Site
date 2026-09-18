@@ -268,3 +268,37 @@ export async function handleTemplateInquiryNotification(
   };
 }
 
+
+import { getBookingClientEmailHtml, getBookingAdminEmailHtml, BookingEmailProps } from "./templates";
+
+export async function handleBookingNotification(data: BookingEmailProps) {
+  const adminEmail = process.env.ADMIN_NOTIFICATION_EMAIL || DEFAULT_ADMIN_EMAIL;
+  
+  const clientSubject = `Booking Confirmed: ${data.meetingType} | Spectrum`;
+  const clientHtml = getBookingClientEmailHtml(data);
+  const clientText = `Hi ${data.guestName},\n\nYour strategy call with Spectrum has been confirmed.\n\nDate: ${data.slotDate}\nTime: ${data.slotTime}\nMeeting Link: ${data.meetLink}\n\nWe look forward to speaking with you!`;
+
+  const adminSubject = `[Spectrum Alert] New Booking: ${data.meetingType} by ${data.guestName}`;
+  const adminHtml = getBookingAdminEmailHtml(data);
+  const adminText = `New strategy call booked on Spectrum!\n\nClient: ${data.guestName} (${data.guestEmail})\nType: ${data.meetingType}\nDate: ${data.slotDate}\nTime: ${data.slotTime}\nLink: ${data.meetLink}`;
+
+  const [clientResult, adminResult] = await Promise.allSettled([
+    sendEmail({
+      to: data.guestEmail,
+      subject: clientSubject,
+      html: clientHtml,
+      text: clientText,
+    }),
+    sendEmail({
+      to: adminEmail,
+      subject: adminSubject,
+      html: adminHtml,
+      text: adminText,
+    }),
+  ]);
+
+  return {
+    clientSuccess: clientResult.status === "fulfilled" && clientResult.value.success,
+    adminSuccess: adminResult.status === "fulfilled" && adminResult.value.success,
+  };
+}

@@ -44,6 +44,18 @@ export async function createBookingAction(data: {
       },
     });
 
+    // Send emails to customer and admin
+    import("@/lib/email/mailer").then(({ handleBookingNotification }) => {
+      handleBookingNotification({
+        guestName: data.guestName,
+        guestEmail: data.guestEmail,
+        meetingType: data.meetingType,
+        slotDate: data.slotDate,
+        slotTime: data.slotTime,
+        meetLink: booking.meetLink || "",
+      }).catch(console.error);
+    });
+
     revalidatePath("/admin");
     revalidatePath("/book");
     return { success: true, booking };

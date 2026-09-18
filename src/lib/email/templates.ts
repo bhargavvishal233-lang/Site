@@ -678,3 +678,58 @@ export function getTemplateInquiryAdminEmailHtml({
   `.trim();
 }
 
+
+export interface BookingEmailProps {
+  guestName: string;
+  guestEmail: string;
+  meetingType: string;
+  slotDate: string;
+  slotTime: string;
+  meetLink: string;
+  time?: string;
+}
+
+export function getBookingClientEmailHtml(data: BookingEmailProps): string {
+  const year = new Date().getFullYear();
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div style="font-family: sans-serif; padding: 20px;">
+    <h2>Booking Confirmed: ${data.meetingType}</h2>
+    <p>Hi ${data.guestName},</p>
+    <p>Your strategy call with Spectrum has been confirmed.</p>
+    <ul>
+      <li><strong>Date:</strong> ${data.slotDate}</li>
+      <li><strong>Time:</strong> ${data.slotTime}</li>
+      <li><strong>Meeting Link:</strong> <a href="${data.meetLink}">${data.meetLink}</a></li>
+    </ul>
+    <p>We look forward to speaking with you!</p>
+    <br/>
+    <p>&copy; ${year} Spectrum Agency</p>
+  </div>
+</body>
+</html>
+  `;
+}
+
+export function getBookingAdminEmailHtml(data: BookingEmailProps): string {
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <div style="font-family: sans-serif; padding: 20px;">
+    <h2>New Booking Scheduled</h2>
+    <p>A new strategy call has been booked on Spectrum.</p>
+    <ul>
+      <li><strong>Client:</strong> ${data.guestName} (${data.guestEmail})</li>
+      <li><strong>Type:</strong> ${data.meetingType}</li>
+      <li><strong>Date:</strong> ${data.slotDate}</li>
+      <li><strong>Time:</strong> ${data.slotTime}</li>
+      <li><strong>Meeting Link:</strong> <a href="${data.meetLink}">${data.meetLink}</a></li>
+    </ul>
+  </div>
+</body>
+</html>
+  `;
+}
