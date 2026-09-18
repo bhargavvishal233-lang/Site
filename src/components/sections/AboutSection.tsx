@@ -40,7 +40,7 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
             About Us
           </h2>
-          <p className="text-xl md:text-2xl leading-[1.5] font-light text-white/90">
+          <p className="text-base md:text-lg leading-[1.6] font-light text-white/90">
             We are a creative team that turns bold ideas into thoughtful, engaging digital experiences. We combine bold visuals, intuitive layouts, and strategic thinking to create websites that feel unique, work seamlessly, and help brands stand out.
           </p>
         </div>
@@ -53,7 +53,7 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
             Services
           </h2>
-          <ul className="space-y-2 text-lg font-light text-white/80">
+          <ul className="space-y-2 text-sm font-light text-white/80">
             <li>Branding</li>
             <li>UX/UI Design</li>
             <li>Development</li>
@@ -67,7 +67,7 @@ export const AboutSection: React.FC = () => {
           <h2 className="text-[#a0a0a0] text-xs font-bold tracking-[0.2em] uppercase mb-6">
             Industries
           </h2>
-          <ul className="space-y-2 text-lg font-light text-white/80">
+          <ul className="space-y-2 text-sm font-light text-white/80">
             <li>Design</li>
             <li>Technology</li>
             <li>Fashion</li>
@@ -100,7 +100,7 @@ export const AboutSection: React.FC = () => {
             /* The base styling for the text */
             color: white;
             font-weight: 800;
-            font-size: clamp(2rem, 5vw, 4rem); /* Reduced text size */
+            font-size: clamp(1.25rem, 3.5vw, 3.25rem); /* Reduced text size */
             letter-spacing: -0.02em;
             white-space: nowrap;
             /* Hide the back of the cylinder slightly or completely if desired. */
