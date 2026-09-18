@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { auth } from "@clerk/nextjs/server";
+import { auth } from "@/auth";
 import { revalidatePath } from "next/cache";
 import { handleTemplateInquiryNotification } from "@/lib/email/mailer";
 
@@ -15,7 +15,8 @@ export async function createInquiryAction(data: {
   notes?: string;
 }) {
   try {
-    const { userId } = await auth();
+    const session = await auth();
+    const userId = session?.user?.id;
 
     // If logged in and user record doesn't exist in Postgres yet, upsert it
     if (userId) {

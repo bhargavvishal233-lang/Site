@@ -1,31 +1,25 @@
 import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+import Google from "next-auth/providers/google";
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { prisma } from "@/lib/prisma";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
-    Credentials({
-      name: "Admin Access",
-      credentials: {},
-      async authorize() {
-        // Bypass authentication entirely for development
-        return {
-          id: "admin-dev-id",
-          name: "Admin User",
-          email: "admin@spectrum.agency",
-          role: "ADMIN",
-        };
-      },
+    Google({
+      clientId: process.env.AUTH_GOOGLE_ID,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET,
     }),
   ],
   pages: {
-    signIn: "/login",
+    signIn: "/",
   },
   callbacks: {
-    async session({ session, token }) {
-      if (session.user) {
-        session.user.id = token.sub as string;
+    async session({ session, user }) {
+      if (session.user && user) {
+        session.user.id = user.id;
         // @ts-ignore
-        session.user.role = "ADMIN";
+        session.user.role = (user as any).role || "CLIENT";
       }
       return session;
     },

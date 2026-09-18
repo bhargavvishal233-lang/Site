@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { auth } from "@clerk/nextjs/server";
+import { auth } from "@/auth";
 import { revalidatePath } from "next/cache";
 
 export async function createBookingAction(data: {
@@ -13,7 +13,8 @@ export async function createBookingAction(data: {
   slotTime: string;
 }) {
   try {
-    const { userId } = await auth();
+    const session = await auth();
+    const userId = session?.user?.id;
 
     if (userId) {
       await prisma.user.upsert({

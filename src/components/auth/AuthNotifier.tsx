@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useAuth, useUser } from "@clerk/nextjs";
+import { useSession } from "next-auth/react";
 
 /**
  * AuthNotifier component
@@ -9,12 +9,14 @@ import { useAuth, useUser } from "@clerk/nextjs";
  * are dispatched to both the client and Spectrum admin (aradhyakaustubh1210@gmail.com).
  */
 export function AuthNotifier() {
-  const { isSignedIn, sessionId } = useAuth();
-  const { isLoaded } = useUser();
+  const { data: session, status } = useSession();
   const notifiedRef = useRef<string | null>(null);
 
   useEffect(() => {
-    if (!isLoaded || !isSignedIn || !sessionId) return;
+    if (status !== "authenticated" || !session) return;
+
+    // Use a unique combination for session or user ID
+    const sessionId = session.user?.id || "unknown-session";
 
     // Check in-memory and browser session storage to prevent multiple calls
     if (notifiedRef.current === sessionId) return;
@@ -48,7 +50,7 @@ export function AuthNotifier() {
       .catch((err) => {
         console.error("[Spectrum AuthNotifier] Failed to contact notification endpoint:", err);
       });
-  }, [isLoaded, isSignedIn, sessionId]);
+  }, [status, session]);
 
   return null;
 }

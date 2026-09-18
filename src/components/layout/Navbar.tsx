@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { NavItem } from "@/types/navigation";
-import { SignInButton, SignUpButton, Show, UserButton } from "@clerk/nextjs";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const navigationItems: NavItem[] = [
   {
@@ -34,6 +34,7 @@ export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const { data: session } = useSession();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,12 +104,24 @@ export const Navbar: React.FC = () => {
 
         {/* Header Actions */}
         <div className="hidden lg:flex items-center gap-4">
-          <Show when="signed-out">
-            <SignInButton mode="modal" />
-          </Show>
-          <Show when="signed-in">
-            <UserButton />
-          </Show>
+          {!session ? (
+            <Button variant="outline" size="sm" onClick={() => signIn("google")}>
+              Sign In
+            </Button>
+          ) : (
+            <div className="flex items-center gap-3">
+              {session.user?.image ? (
+                <img src={session.user.image} alt="User avatar" className="w-8 h-8 rounded-full border border-black/10" />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-semibold">
+                  {session.user?.name?.charAt(0) || "U"}
+                </div>
+              )}
+              <Button variant="outline" size="sm" onClick={() => signOut()}>
+                Sign Out
+              </Button>
+            </div>
+          )}
           <Button variant="primary" size="md">
             Get in Touch
           </Button>
@@ -153,12 +166,15 @@ export const Navbar: React.FC = () => {
                 )}
               </div>
             ))}
-            <Show when="signed-out">
-              <SignInButton />
-            </Show>
-            <Show when="signed-in">
-              <UserButton />
-            </Show>
+            {!session ? (
+              <Button variant="outline" size="lg" className="w-full mt-4" onClick={() => signIn("google")}>
+                Sign In
+              </Button>
+            ) : (
+              <Button variant="outline" size="lg" className="w-full mt-4" onClick={() => signOut()}>
+                Sign Out
+              </Button>
+            )}
             <Button variant="primary" size="lg" className="w-full mt-2">
               Get in Touch
             </Button>
