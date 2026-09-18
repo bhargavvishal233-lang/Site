@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/Button";
 import { NavItem } from "@/types/navigation";
 import { useSession, signIn, signOut } from "next-auth/react";
 
+import { usePathname, useRouter } from "next/navigation";
+
 const navigationItems: NavItem[] = [
   {
     title: "Services",
@@ -35,6 +37,8 @@ export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { data: session } = useSession();
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +47,23 @@ export const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const isAnchor = href.startsWith('#') || href.startsWith('/#');
+    if (isAnchor) {
+      e.preventDefault();
+      const hash = href.substring(href.indexOf('#'));
+      if (pathname !== '/') {
+        router.push(`/${hash}`);
+      } else {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      setMobileMenuOpen(false);
+    }
+  };
 
   return (
     <header
@@ -69,7 +90,8 @@ export const Navbar: React.FC = () => {
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <Link
-                href={item.href}
+                href={item.href.startsWith('#') && pathname !== '/' ? `/${item.href}` : item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="text-sm font-medium text-charcoal/80 hover:text-crimson transition-colors flex items-center gap-1.5 py-1"
               >
                 {item.title}
@@ -83,7 +105,8 @@ export const Navbar: React.FC = () => {
                     {item.children.map((subItem) => (
                       <Link
                         key={subItem.title}
-                        href={subItem.href}
+                        href={subItem.href.startsWith('#') && pathname !== '/' ? `/${subItem.href}` : subItem.href}
+                        onClick={(e) => handleNavClick(e, subItem.href)}
                         className="block p-3 rounded-xl hover:bg-canvas transition-colors group"
                       >
                         <div className="text-sm font-semibold text-charcoal group-hover:text-crimson flex items-center justify-between">
@@ -144,8 +167,11 @@ export const Navbar: React.FC = () => {
             {navigationItems.map((item) => (
               <div key={item.title} className="border-b border-black/5 pb-3">
                 <Link
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  href={item.href.startsWith('#') && pathname !== '/' ? `/${item.href}` : item.href}
+                  onClick={(e) => {
+                    if (item.href.startsWith('#') || item.href.startsWith('/#')) handleNavClick(e, item.href);
+                    else setMobileMenuOpen(false);
+                  }}
                   className="text-base font-semibold text-charcoal flex items-center justify-between"
                 >
                   {item.title}
@@ -155,8 +181,11 @@ export const Navbar: React.FC = () => {
                     {item.children.map((subItem) => (
                       <Link
                         key={subItem.title}
-                        href={subItem.href}
-                        onClick={() => setMobileMenuOpen(false)}
+                        href={subItem.href.startsWith('#') && pathname !== '/' ? `/${subItem.href}` : subItem.href}
+                        onClick={(e) => {
+                          if (subItem.href.startsWith('#') || subItem.href.startsWith('/#')) handleNavClick(e, subItem.href);
+                          else setMobileMenuOpen(false);
+                        }}
                         className="text-sm text-charcoal-muted hover:text-crimson py-1"
                       >
                         {subItem.title}

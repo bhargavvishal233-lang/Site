@@ -18,7 +18,7 @@ export const AboutSection: React.FC = () => {
             About Me
           </h2>
           <p className="text-xl md:text-2xl leading-[1.6] font-light text-white/90">
-            I'm a creative art director who turns bold ideas into thoughtful, engaging digital experiences. I combine bold visuals, intuitive layouts, and strategic thinking to create websites that feel unique, work seamlessly, and help brands stand out.
+            I&apos;m a creative art director who turns bold ideas into thoughtful, engaging digital experiences. I combine bold visuals, intuitive layouts, and strategic thinking to create websites that feel unique, work seamlessly, and help brands stand out.
           </p>
         </div>
 
