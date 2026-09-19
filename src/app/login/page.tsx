@@ -19,7 +19,7 @@ export default function LoginPage() {
           <form
             action={async () => {
               "use server";
-              await signIn("credentials", { redirectTo: "/admin" });
+              await signIn("google", { redirectTo: "/admin" });
             }}
           >
             <button
