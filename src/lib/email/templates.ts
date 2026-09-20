@@ -89,7 +89,7 @@ export function getClientSignUpEmailHtml({ name, email }: ClientEmailProps): str
               <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 12px;">
                 <tr>
                   <td align="center" style="border-radius: 8px; background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
-                    <a href="https://spectrum.agency" target="_blank" style="font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none; padding: 14px 28px; display: inline-block; border-radius: 8px;">
+                    <a href="https://sspectrummagency.vercel.app" target="_blank" style="font-size: 14px; font-weight: 600; color: #ffffff; text-decoration: none; padding: 14px 28px; display: inline-block; border-radius: 8px;">
                       Access Spectrum Portal &rarr;
                     </a>
                   </td>
@@ -109,7 +109,7 @@ export function getClientSignUpEmailHtml({ name, email }: ClientEmailProps): str
           <tr>
             <td style="padding: 24px 36px 36px; text-align: left;">
               <p style="margin: 0 0 8px; font-size: 12px; color: #71717a; line-height: 1.5;">
-                If you did not register for a Spectrum account, please contact our team immediately at <a href="mailto:support@spectrum.agency" style="color: #a1a1aa; text-decoration: underline;">support@spectrum.agency</a>.
+                If you did not register for a Spectrum account, please contact our team immediately at <a href="mailto:sspectrumm0112@gmail.com" style="color: #a1a1aa; text-decoration: underline;">sspectrumm0112@gmail.com</a>.
               </p>
               <p style="margin: 0; font-size: 11px; color: #52525b;">
                 &copy; ${year} Spectrum Agency. All rights reserved. High-Impact Engineering & Growth.
@@ -386,9 +386,6 @@ export interface TemplateInquiryEmailProps {
   time?: string;
 }
 
-/**
- * Generates the confirmation email sent to the client when they submit a template inquiry
- */
 export function getTemplateInquiryClientEmailHtml({
   clientName,
   clientEmail,
@@ -408,25 +405,25 @@ export function getTemplateInquiryClientEmailHtml({
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inquiry Received - ${templateName} | Spectrum</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0c0d0e; color: #f4f4f5;">
-  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0c0d0e; min-height: 100vh; padding: 40px 15px;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f9fafb; color: #111827;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f9fafb; min-height: 100vh; padding: 40px 15px;">
     <tr>
       <td align="center">
         <!-- Main Card -->
-        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 580px; background-color: #141517; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 580px; background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">
           
           <!-- Header -->
           <tr>
-            <td style="padding: 36px 36px 24px; border-bottom: 1px solid #27272a; background: linear-gradient(180deg, #1a1b1e 0%, #141517 100%);">
+            <td style="padding: 32px 36px 24px; border-bottom: 1px solid #e5e7eb; background: #ffffff;">
               <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td>
-                    <div style="display: inline-block; font-size: 20px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">
+                    <div style="display: inline-block; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #111827;">
                       SPECTRUM<span style="color: #ef4444;">.</span>
                     </div>
                   </td>
                   <td align="right">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #f87171; background-color: rgba(239, 68, 68, 0.12); border: 1px solid rgba(239, 68, 68, 0.25); padding: 4px 10px; border-radius: 20px;">
+                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #dc2626; background-color: #fee2e2; border: 1px solid #fca5a5; padding: 4px 10px; border-radius: 20px;">
                       Inquiry Received
                     </span>
                   </td>
@@ -437,60 +434,60 @@ export function getTemplateInquiryClientEmailHtml({
 
           <!-- Body -->
           <tr>
-            <td style="padding: 36px 36px 28px;">
-              <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff; line-height: 1.3;">
+            <td style="padding: 32px 36px 28px;">
+              <h1 style="margin: 0 0 16px; font-size: 22px; font-weight: 700; letter-spacing: -0.5px; color: #111827; line-height: 1.3;">
                 Thank you for your inquiry, ${displayName}!
               </h1>
               
-              <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #d4d4d8;">
-                We have received your inquiry for the <strong style="color: #ffffff;">${templateName}</strong> blueprint. Our design and software architecture team is currently reviewing your project details.
+              <p style="margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: #4b5563;">
+                We have received your inquiry for the <strong style="color: #111827;">${templateName}</strong> blueprint. Our design and software architecture team is currently reviewing your project details.
               </p>
 
               <!-- Summary Card -->
-              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #1a1b1e; border: 1px solid #2d2e33; border-radius: 12px; margin: 20px 0; overflow: hidden;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f9fafb; border: 1px solid #e5e7eb; border-radius: 10px; margin: 20px 0; overflow: hidden;">
                 <tr>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c; width: 35%;">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #a1a1aa; letter-spacing: 0.5px;">Selected Blueprint</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb; width: 35%;">
+                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.5px;">Selected Blueprint</span>
                   </td>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c;">
-                    <span style="font-size: 13px; font-weight: 700; color: #ffffff;">${templateName}</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-size: 13px; font-weight: 700; color: #111827;">${templateName}</span>
                   </td>
                 </tr>
                 <tr>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c;">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #a1a1aa; letter-spacing: 0.5px;">Company / Project</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.5px;">Company / Project</span>
                   </td>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c;">
-                    <span style="font-size: 13px; color: #d4d4d8;">${company?.trim() ? company.trim() : "Not specified"}</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-size: 13px; color: #374151;">${company?.trim() ? company.trim() : "Not specified"}</span>
                   </td>
                 </tr>
                 <tr>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c;">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #a1a1aa; letter-spacing: 0.5px;">Estimated Budget</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.5px;">Estimated Budget</span>
                   </td>
-                  <td style="padding: 14px 18px; border-bottom: 1px solid #25262c;">
-                    <span style="font-size: 13px; font-weight: 600; color: #10b981;">${budgetRange || "$3k - $5k"}</span>
+                  <td style="padding: 14px 18px; border-bottom: 1px solid #e5e7eb;">
+                    <span style="font-size: 13px; font-weight: 600; color: #059669;">${budgetRange || "$3k - $5k"}</span>
                   </td>
                 </tr>
                 ${
                   notes?.trim()
-                    ? `
+                    ? \`
                 <tr>
                   <td style="padding: 14px 18px; vertical-align: top;">
-                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #a1a1aa; letter-spacing: 0.5px;">Project Details</span>
+                    <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.5px;">Project Details</span>
                   </td>
                   <td style="padding: 14px 18px;">
-                    <span style="font-size: 13px; color: #d4d4d8; line-height: 1.5;">${notes.trim()}</span>
+                    <span style="font-size: 13px; color: #4b5563; line-height: 1.5;">\${notes.trim()}</span>
                   </td>
-                </tr>`
+                </tr>\`
                     : ""
                 }
               </table>
 
               <!-- What's Next -->
-              <div style="padding: 18px 20px; background-color: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 10px; margin-bottom: 24px;">
-                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #818cf8; margin-bottom: 6px;">Next Steps</div>
-                <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #c7d2fe;">
+              <div style="padding: 18px 20px; background-color: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; margin-bottom: 24px;">
+                <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #2563eb; margin-bottom: 6px;">Next Steps</div>
+                <p style="margin: 0; font-size: 13px; line-height: 1.5; color: #1e3a8a;">
                   A Spectrum lead architect will contact you directly at <strong>${clientEmail}</strong> within 24 business hours to discuss custom features, technical requirements, and deployment timelines.
                 </p>
               </div>
@@ -498,7 +495,7 @@ export function getTemplateInquiryClientEmailHtml({
               <table role="presentation" border="0" cellspacing="0" cellpadding="0">
                 <tr>
                   <td align="center" style="border-radius: 8px; background: #ef4444;">
-                    <a href="https://spectrum.agency/templates" target="_blank" style="font-size: 13px; font-weight: 600; color: #ffffff; text-decoration: none; padding: 12px 24px; display: inline-block; border-radius: 8px;">
+                    <a href="https://sspectrummagency.vercel.app/templates" target="_blank" style="font-size: 13px; font-weight: 600; color: #ffffff; text-decoration: none; padding: 12px 24px; display: inline-block; border-radius: 8px;">
                       Explore More Blueprints &rarr;
                     </a>
                   </td>
@@ -509,11 +506,11 @@ export function getTemplateInquiryClientEmailHtml({
 
           <!-- Footer -->
           <tr>
-            <td style="padding: 24px 36px 36px; border-top: 1px solid #27272a;">
-              <p style="margin: 0 0 6px; font-size: 12px; color: #71717a;">
-                Need urgent modifications? Contact us directly at <a href="mailto:sspectrumm0112@gmail.com" style="color: #a1a1aa; text-decoration: underline;">sspectrumm0112@gmail.com</a>.
+            <td style="padding: 24px 36px 36px; border-top: 1px solid #e5e7eb; background-color: #f9fafb;">
+              <p style="margin: 0 0 6px; font-size: 12px; color: #6b7280;">
+                Need urgent modifications? Contact us directly at <a href="mailto:sspectrumm0112@gmail.com" style="color: #4b5563; text-decoration: underline;">sspectrumm0112@gmail.com</a>.
               </p>
-              <p style="margin: 0; font-size: 11px; color: #52525b;">
+              <p style="margin: 0; font-size: 11px; color: #9ca3af;">
                 &copy; ${year} Spectrum Agency. All rights reserved. High-Impact Engineering & Growth.
               </p>
             </td>
@@ -525,7 +522,7 @@ export function getTemplateInquiryClientEmailHtml({
   </table>
 </body>
 </html>
-  `.trim();
+  \`.trim();
 }
 
 /**
