@@ -33,8 +33,8 @@ export function getClientSignUpEmailHtml({ name, email }: ClientEmailProps): str
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome to Spectrum</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0c0d0e; color: #f4f4f5;">
-  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0c0d0e; min-height: 100vh; padding: 40px 15px;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f9fafb; color: #111827;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f9fafb; min-height: 100vh; padding: 40px 15px;">
     <tr>
       <td align="center">
         <!-- Main Card -->
@@ -142,8 +142,8 @@ export function getClientSignInEmailHtml({ name, email, time }: ClientEmailProps
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Security Notice: Sign-In to Spectrum</title>
 </head>
-<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #0c0d0e; color: #f4f4f5;">
-  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0c0d0e; min-height: 100vh; padding: 40px 15px;">
+<body style="margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f9fafb; color: #111827;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #f9fafb; min-height: 100vh; padding: 40px 15px;">
     <tr>
       <td align="center">
         <!-- Main Card -->
