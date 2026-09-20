@@ -522,7 +522,7 @@ export function getTemplateInquiryClientEmailHtml({
   </table>
 </body>
 </html>
-  \`.trim();
+  `.trim();
 }
 
 /**
