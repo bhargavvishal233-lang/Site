@@ -471,15 +471,15 @@ export function getTemplateInquiryClientEmailHtml({
                 </tr>
                 ${
                   notes?.trim()
-                    ? \`
+                    ? `
                 <tr>
                   <td style="padding: 14px 18px; vertical-align: top;">
                     <span style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #6b7280; letter-spacing: 0.5px;">Project Details</span>
                   </td>
                   <td style="padding: 14px 18px;">
-                    <span style="font-size: 13px; color: #4b5563; line-height: 1.5;">\${notes.trim()}</span>
+                    <span style="font-size: 13px; color: #4b5563; line-height: 1.5;">${notes.trim()}</span>
                   </td>
-                </tr>\`
+                </tr>`
                     : ""
                 }
               </table>
