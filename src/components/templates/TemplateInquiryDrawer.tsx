@@ -132,7 +132,7 @@ export const TemplateInquiryDrawer: React.FC<TemplateInquiryDrawerProps> = ({
                   disabled={isSubmitting}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full text-xs p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
+                  className="w-full text-xs text-charcoal bg-white p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
                   placeholder="e.g. Jane Doe"
                 />
               </div>
@@ -145,7 +145,7 @@ export const TemplateInquiryDrawer: React.FC<TemplateInquiryDrawerProps> = ({
                   disabled={isSubmitting}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full text-xs p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
+                  className="w-full text-xs text-charcoal bg-white p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
                   placeholder="jane@company.com"
                 />
               </div>
@@ -157,7 +157,7 @@ export const TemplateInquiryDrawer: React.FC<TemplateInquiryDrawerProps> = ({
                   disabled={isSubmitting}
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                  className="w-full text-xs p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
+                  className="w-full text-xs text-charcoal bg-white p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson transition-colors"
                   placeholder="Acme Inc."
                 />
               </div>
@@ -168,7 +168,7 @@ export const TemplateInquiryDrawer: React.FC<TemplateInquiryDrawerProps> = ({
                   value={formData.budget}
                   disabled={isSubmitting}
                   onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                  className="w-full text-xs p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson bg-white transition-colors"
+                  className="w-full text-xs text-charcoal bg-white p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson bg-white transition-colors"
                 >
                   <option>$2,500 - $5,000 (Sprint MVP)</option>
                   <option>$5,000 - $10,000 (Full Design & Code)</option>
@@ -183,7 +183,7 @@ export const TemplateInquiryDrawer: React.FC<TemplateInquiryDrawerProps> = ({
                   disabled={isSubmitting}
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full text-xs p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson resize-none transition-colors"
+                  className="w-full text-xs text-charcoal bg-white p-3 rounded-xl border border-black/10 focus:outline-none focus:border-crimson resize-none transition-colors"
                   placeholder="Tell us any specific features, brand guidelines, or timelines..."
                 />
               </div>
