@@ -1,6 +1,6 @@
 import { SessionProvider } from "next-auth/react";
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Plus_Jakarta_Sans, Baskervville } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { AuthNotifier } from "@/components/auth/AuthNotifier";
@@ -9,6 +9,13 @@ const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["400", "500", "600", "700", "800"],
+});
+
+const fontSerif = Baskervville({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${fontSans.variable} font-sans antialiased bg-canvas text-charcoal`}>
+      <body className={`${fontSans.variable} ${fontSerif.variable} font-sans antialiased bg-canvas text-charcoal`}>
         <SessionProvider>
           <AuthNotifier />
           <Navbar />

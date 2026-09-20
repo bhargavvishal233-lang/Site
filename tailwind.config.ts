@@ -25,6 +25,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", "sans-serif"],
+        serif: ["var(--font-serif)", "serif"],
       },
       boxShadow: {
         subtle: "0 10px 30px -10px rgba(0, 0, 0, 0.05)",

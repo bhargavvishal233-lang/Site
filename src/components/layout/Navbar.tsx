@@ -14,8 +14,8 @@ const navigationItems: NavItem[] = [
     title: "Services",
     href: "#services",
     children: [
-      { title: "Performance Marketing", description: "Scale user acquisition with high ROI", href: "#marketing" },
-      { title: "UI/UX & Product Design", description: "Design high-converting digital experiences", href: "#design" },
+      { title: "Performance Marketing", description: "Scale user acquisition with high ROI", href: "/services/performance-marketing" },
+      { title: "UI/UX & Product Design", description: "Design high-converting digital experiences", href: "/services/ui-ux-design" },
       { title: "Branding & Identity", description: "Distinctive positioning and visual systems", href: "#branding" },
     ],
   },
@@ -23,9 +23,9 @@ const navigationItems: NavItem[] = [
     title: "Software Development",
     href: "#development",
     children: [
-      { title: "Full-Stack Web Apps", description: "Next.js, Node, and Cloud infrastructure", href: "#web-apps" },
-      { title: "Mobile Applications", description: "iOS and Android native & hybrid apps", href: "#mobile-apps" },
-      { title: "Custom API & CRM Systems", description: "Tailored business automation tooling", href: "#crm" },
+      { title: "Full-Stack Web Apps", description: "Next.js, Node, and Cloud infrastructure", href: "/services/full-stack-web-apps" },
+      { title: "Mobile Applications", description: "iOS and Android native & hybrid apps", href: "/services/mobile-applications" },
+      { title: "Custom API & CRM Systems", description: "Tailored business automation tooling", href: "/services/custom-api-crm" },
     ],
   },
   { title: "Templates", href: "/templates" },
@@ -65,16 +65,21 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const isDarkPage = pathname === '/services/performance-marketing' || pathname === '/services/ui-ux-design';
+  const textColor = isDarkPage ? 'text-white' : 'text-charcoal';
+  const textMuted = isDarkPage ? 'text-white/80' : 'text-charcoal/80';
+  const bgGlass = isDarkPage ? 'bg-black/50 backdrop-blur-lg border-b border-white/10' : 'glass-header shadow-sm';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-header py-3.5 shadow-sm" : "bg-transparent py-5"
+        isScrolled ? `${bgGlass} py-3.5` : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-xl font-extrabold tracking-tighter text-charcoal uppercase flex items-center">
+          <span className={`text-xl font-extrabold tracking-tighter ${textColor} uppercase flex items-center`}>
             SPECTRUM
             <span className="inline-block w-2 h-2 rounded-full bg-crimson ml-1.5 transition-transform group-hover:scale-125" />
           </span>
@@ -92,7 +97,7 @@ export const Navbar: React.FC = () => {
               <Link
                 href={item.href.startsWith('#') && pathname !== '/' ? `/${item.href}` : item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="text-sm font-medium text-charcoal/80 hover:text-crimson transition-colors flex items-center gap-1.5 py-1"
+                className={`text-sm font-medium ${textMuted} hover:text-crimson transition-colors flex items-center gap-1.5 py-1`}
               >
                 {item.title}
                 {item.children && <ChevronDown className="w-3.5 h-3.5 opacity-60" />}
@@ -153,7 +158,7 @@ export const Navbar: React.FC = () => {
         {/* Mobile Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-charcoal hover:text-crimson"
+          className={`lg:hidden p-2 ${textColor} hover:text-crimson`}
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

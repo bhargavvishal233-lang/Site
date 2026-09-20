@@ -1,0 +1,119 @@
+
+> get@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.5 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.204.6.111:3000
+✓ Ready in 230ms
+✓ Running next.config.ts took 18ms
+
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+[browser] ClientFetchError: There was a problem with the server configuration. Check the server logs for more information.. Read more at https://errors.authjs.dev#autherror
+ GET / 200 in 367ms (next.js: 94ms, application-code: 272ms)
+ GET /book 200 in 265ms (next.js: 174ms, application-code: 91ms)
+ GET / 200 in 78ms (next.js: 1.8ms, application-code: 76ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 461ms (next.js: 434ms, application-code: 27ms)
+ GET /api/auth/session 500 in 379ms (next.js: 352ms, application-code: 27ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 4ms (next.js: 2ms, application-code: 1.7ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 6ms (next.js: 4ms, application-code: 1.4ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 2ms (next.js: 0.6ms, application-code: 1.7ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 3ms (next.js: 1.4ms, application-code: 1.9ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 5ms (next.js: 4ms, application-code: 1.5ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 2ms (next.js: 0.7ms, application-code: 1.4ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 3ms (next.js: 0.6ms, application-code: 3ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 3ms (next.js: 0.8ms, application-code: 1.9ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 2ms (next.js: 0.6ms, application-code: 1.7ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 1.7ms (next.js: 0.5ms, application-code: 1.2ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 1.7ms (next.js: 0.5ms, application-code: 1.3ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 1.9ms (next.js: 0.5ms, application-code: 1.4ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 1.8ms (next.js: 0.6ms, application-code: 1.2ms)
+[31m[auth][error][0m MissingSecret: Please define a `secret`. Read more at https://errors.authjs.dev#missingsecret
+    at assertConfig (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:3881:16)
+    at Auth (/Users/bhargavvishal/Desktop/get/.next/dev/server/chunks/1jgb_@auth_core_0akq-zj._.js:310:292)
+    at async AppRouteRouteModule.do (/Users/bhargavvishal/Desktop/get/node_modules/.pnpm/next@16.3.5_@babel+core@7.29.7_supports-color@7.2.0__@types+node@20.19.43_react-dom@19.2.8_react@19.2.8__react@19.2.8/node_modules/next/dist/compiled/next-server/app-route-turbo.runtime.dev.js:5:42793)
+ GET /api/auth/session 500 in 2ms (next.js: 0.7ms, application-code: 1.5ms)
+⨯ Error: Event handlers cannot be passed to Client Component props.
+  <form className=... onSubmit={function onSubmit} children=...>
+                               ^^^^^^^^^^^^^^^^^^^
+If you need interactivity, consider converting part of this to a Client Component.
+    at ignore-listed frames {
+  digest: '3938154287'
+}
+ GET /services/full-stack-web-apps 500 in 205ms (next.js: 11ms, application-code: 194ms)
