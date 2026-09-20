@@ -4,7 +4,7 @@ import { Plus_Jakarta_Sans, Baskervville } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { AuthNotifier } from "@/components/auth/AuthNotifier";
-import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
+
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -34,8 +34,7 @@ export default function RootLayout({
         <SessionProvider>
           <AuthNotifier />
           <Navbar />
-          <MobileBottomNav />
-          <main className="min-h-screen pt-24 lg:pt-24 pt-4">{children}</main>
+          <main className="min-h-screen pt-24">{children}</main>
         </SessionProvider>
       </body>
     </html>
