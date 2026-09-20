@@ -224,7 +224,7 @@ export function getClientSignInEmailHtml({ name, email, time }: ClientEmailProps
 }
 
 /**
- * Generates the notification email sent to the owner (aradhyakaustubh1210@gmail.com)
+ * Generates the notification email sent to the owner (sspectrumm0112@gmail.com)
  */
 export function getAdminNotificationEmailHtml({
   type,
@@ -283,7 +283,7 @@ export function getAdminNotificationEmailHtml({
                 ${isSignUp ? "🎉 A new client registered on Spectrum" : "⚡ Client signed in to Spectrum"}
               </h2>
               <p style="margin: 0 0 24px; font-size: 14px; color: #a1a1aa;">
-                Automated alert dispatched to owner (<strong>aradhyakaustubh1210@gmail.com</strong>).
+                Automated alert dispatched to owner (<strong>sspectrumm0112@gmail.com</strong>).
               </p>
 
               <!-- Details Grid -->
@@ -511,7 +511,7 @@ export function getTemplateInquiryClientEmailHtml({
           <tr>
             <td style="padding: 24px 36px 36px; border-top: 1px solid #27272a;">
               <p style="margin: 0 0 6px; font-size: 12px; color: #71717a;">
-                Need urgent modifications? Contact us directly at <a href="mailto:aradhyakaustubh1210@gmail.com" style="color: #a1a1aa; text-decoration: underline;">aradhyakaustubh1210@gmail.com</a>.
+                Need urgent modifications? Contact us directly at <a href="mailto:sspectrumm0112@gmail.com" style="color: #a1a1aa; text-decoration: underline;">sspectrumm0112@gmail.com</a>.
               </p>
               <p style="margin: 0; font-size: 11px; color: #52525b;">
                 &copy; ${year} Spectrum Agency. All rights reserved. High-Impact Engineering & Growth.
@@ -529,7 +529,7 @@ export function getTemplateInquiryClientEmailHtml({
 }
 
 /**
- * Generates the notification email sent to the owner (aradhyakaustubh1210@gmail.com)
+ * Generates the notification email sent to the owner (sspectrumm0112@gmail.com)
  * when a client submits a template design inquiry
  */
 export function getTemplateInquiryAdminEmailHtml({
@@ -664,7 +664,7 @@ export function getTemplateInquiryAdminEmailHtml({
           <tr>
             <td style="padding: 20px 32px; border-top: 1px solid #232428; background-color: #0e0f11;">
               <p style="margin: 0; font-size: 11px; color: #52525b;">
-                Spectrum Internal CRM &bull; Inquiries routed to aradhyakaustubh1210@gmail.com
+                Spectrum Internal CRM &bull; Inquiries routed to sspectrumm0112@gmail.com
               </p>
             </td>
           </tr>

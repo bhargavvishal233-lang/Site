@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 /**
  * AuthNotifier component
  * Detects authenticated client sessions and ensures confirmation emails
- * are dispatched to both the client and Spectrum admin (aradhyakaustubh1210@gmail.com).
+ * are dispatched to both the client and Spectrum admin (sspectrumm0112@gmail.com).
  */
 export function AuthNotifier() {
   const { data: session, status } = useSession();

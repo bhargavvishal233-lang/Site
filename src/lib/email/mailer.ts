@@ -23,8 +23,8 @@ export interface SendEmailResult {
   error?: string;
 }
 
-const DEFAULT_ADMIN_EMAIL = "aradhyakaustubh1210@gmail.com";
-const DEFAULT_FROM = process.env.EMAIL_FROM || "Spectrum <aradhyakaustubh1210@gmail.com>";
+const DEFAULT_ADMIN_EMAIL = "sspectrumm0112@gmail.com";
+const DEFAULT_FROM = process.env.EMAIL_FROM || "Spectrum <sspectrumm0112@gmail.com>";
 
 /**
  * Universal email dispatcher
@@ -215,7 +215,7 @@ export async function handleAuthNotificationEvent({
 /**
  * Dispatches automated emails for template design inquiries:
  * 1. Confirmation to the client
- * 2. Alert to aradhyakaustubh1210@gmail.com
+ * 2. Alert to sspectrumm0112@gmail.com
  */
 export async function handleTemplateInquiryNotification(
   data: TemplateInquiryEmailProps
@@ -233,7 +233,7 @@ export async function handleTemplateInquiryNotification(
     ...data,
     time,
   });
-  const clientText = `Hi ${data.clientName},\n\nThank you for your inquiry regarding the ${data.templateName} blueprint on Spectrum.\n\nSummary of your request:\n- Selected Blueprint: ${data.templateName}\n- Company: ${data.company || "N/A"}\n- Estimated Budget: ${data.budgetRange || "$3k - $5k"}\n- Details: ${data.notes || "None provided"}\n\nA Spectrum lead architect will review your project and contact you at ${data.clientEmail} within 24 hours.\n\nBest regards,\nSpectrum Architecture Team\naradhyakaustubh1210@gmail.com`;
+  const clientText = `Hi ${data.clientName},\n\nThank you for your inquiry regarding the ${data.templateName} blueprint on Spectrum.\n\nSummary of your request:\n- Selected Blueprint: ${data.templateName}\n- Company: ${data.company || "N/A"}\n- Estimated Budget: ${data.budgetRange || "$3k - $5k"}\n- Details: ${data.notes || "None provided"}\n\nA Spectrum lead architect will review your project and contact you at ${data.clientEmail} within 24 hours.\n\nBest regards,\nSpectrum Architecture Team\nsspectrumm0112@gmail.com`;
 
   // Admin alert email
   const adminSubject = `[Spectrum Inquiry] New Template Inquiry: ${data.templateName} by ${data.clientName}`;
