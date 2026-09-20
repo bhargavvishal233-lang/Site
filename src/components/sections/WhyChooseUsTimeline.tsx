@@ -75,7 +75,7 @@ export const WhyChooseUsTimeline: React.FC = () => {
   });
 
   return (
-    <section className="py-24 max-w-5xl mx-auto px-6" ref={containerRef}>
+    <section id="why-choose-us" className="py-24 max-w-5xl mx-auto px-6" ref={containerRef}>
       <div className="text-center mb-24">
         <span className="text-xs font-bold uppercase tracking-widest text-crimson mb-3 block">The Spectrum Standard</span>
         <h2 className="text-4xl sm:text-5xl font-serif font-medium text-charcoal">

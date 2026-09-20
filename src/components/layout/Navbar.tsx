@@ -16,7 +16,7 @@ const navigationItems: NavItem[] = [
     children: [
       { title: "Performance Marketing", description: "Scale user acquisition with high ROI", href: "/services/performance-marketing" },
       { title: "UI/UX & Product Design", description: "Design high-converting digital experiences", href: "/services/ui-ux-design" },
-      { title: "Branding & Identity", description: "Distinctive positioning and visual systems", href: "#branding" },
+      { title: "Branding & Identity", description: "Distinctive positioning and visual systems", href: "/#why-choose-us" },
     ],
   },
   {
